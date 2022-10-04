@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gohttp-cm
+data:
+  limit: "200"
+  checkURLs: "https://raw.githubusercontent.com/assignment132/assignment/main/duckduckgo.json,https://raw.githubusercontent.com/assignment132/assignment/main/google.json,https://raw.githubusercontent.com/assignment132/assignment/main/wikipedia.json"
