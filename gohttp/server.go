@@ -30,10 +30,12 @@ func get_url_dataWRetries (url string, aData *[]JsonItems, dataLoc int, wg *sync
     for _, tryTime := range retryTimes {
         res, resBody, err = get_url_data(url)
 
-        if err == nil && res.StatusCode == 200 {
-            break
-        } else if res.StatusCode != 200 {
-            fmt.Fprintf(os.Stderr, "Status code error for %s\n", url)
+        if err == nil {
+	    if res.StatusCode == 200 {
+                break
+            } else {
+                fmt.Fprintf(os.Stderr, "Status code error for %s\n", url)
+	    }
 	} else {
            fmt.Fprintf(os.Stderr, "Request error for %s: %+v\n", url, err)
 	}

@@ -13,6 +13,8 @@ The default URLs that are queried are the following:
 
 If deploying with Kubernetes, the limits and URLs to query can be modified.
 
+The webserver is listening on port 8080.
+
 ## Getting Started
 
 ### Dependencies
